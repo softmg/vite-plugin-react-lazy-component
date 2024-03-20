@@ -1,0 +1,55 @@
+{
+  "name": "@softmg/vite-plugin-react-lazy-component",
+  "version": "0.0.0",
+  "description": "lazy import for react",
+  "bugs": {
+    "url": "https://github.com/softmg/vite-plugin-react-lazy-component/issues"
+  },
+  "author": {
+    "name": "Aleksandr Saburov",
+    "email": "a.saburov@softmg.ru",
+    "url": "https://softmg.ru/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/softmg/vite-plugin-react-lazy-component.git"
+  },
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js",
+      "types": "./index.d.ts"
+    },
+    "./client": {
+      "types": "./client.d.ts"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./index.d.ts",
+  "files": [
+    "dist",
+    "client.d.ts",
+    "index.d.ts"
+  ],
+  "scripts": {
+    "build": "tsc && vite build",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "astring": "^1.8.6",
+    "estree-walker": "^3.0.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.0",
+    "vite-plugin-externalize-deps": "^0.8.0"
+  },
+  "peerDependencies": {
+    "@types/react": "^18.0.0",
+    "vite": "^4.2.0 || ^5.0.0"
+  }
+}
